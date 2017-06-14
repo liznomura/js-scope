@@ -51,7 +51,7 @@ function sendDataToClient() {
   };
 
   function authenticateUser(obj, username) {
-    var userObject = {
+    var userObjectMorpheus = { // this works, and I understand why, but what is the best way to do this because this doesn't seem very flexible?
       handle: 'morpheus',
       authenticated: false
     };
