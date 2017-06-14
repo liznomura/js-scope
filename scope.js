@@ -51,17 +51,15 @@ function sendDataToClient() {
   };
 
   function authenticateUser(obj, username) {
-    var userObjectMorpheus = { // this works, and I understand why, but what is the best way to do this because this doesn't seem very flexible?
+    var userObject = {
       handle: 'morpheus',
       authenticated: false
     };
 
-    if (userObject.handle === username) {
-      userObject.authenticated = true;
-      return userObject;
-    } else {
-      return userObject;
+    if (obj.handle === username) {
+      obj.authenticated = true;
     }
+    return obj;
   }
   authenticateUser(userObject, 'neo');
   return userObject;
