@@ -2,12 +2,14 @@
 var isCookieJarOpen = null;
 
 function closeLid() {
-  /* answer here */
+  isCookieJarOpen = false;
 }
+run(closeLid());
 
 function openLid() {
-  /* answer here */
+  isCookieJarOpen = true;
 }
+run(openLid());
 
 
 // Fill in the return value for the inner function to return a string, 'Hello World' using only the variables provided
