@@ -2,12 +2,14 @@
 var isCookieJarOpen = null;
 
 function closeLid() {
-  /* answer here */
+  isCookieJarOpen = false;
 }
+run(closeLid());
 
 function openLid() {
-  /* answer here */
+  isCookieJarOpen = true;
 }
+run(openLid());
 
 
 // Fill in the return value for the inner function to return a string, 'Hello World' using only the variables provided
@@ -17,7 +19,7 @@ function outerFunction() {
 
   function innerFunction() {
     var world = 'World';
-    return /* answer here */;
+    return hello + ' ' + world;
   }
   return innerFunction();
 }
@@ -31,8 +33,8 @@ function addMatrixElements(matrix) {
 
   for(var i = 0; i < matrix.length; i++) {
     /* fix counter variables in the second loop */
-    for(var i = 0; i < matrix[i].length; i++) {
-      result = result + matrix[i][i];
+    for(var j = 0; j < matrix.length; j++) {
+      result = result + matrix[j][i];
     }
   }
   return result;
@@ -46,21 +48,21 @@ function sendDataToClient() {
   var userObject = {
     handle: 'neo',
     authenticated: false
-  }
+  };
 
   function authenticateUser(obj, username) {
-    var userObject = {
+    var userObjectMorpheus = { // this works, and I understand why, but what is the best way to do this because this doesn't seem very flexible?
       handle: 'morpheus',
       authenticated: false
     };
 
     if (userObject.handle === username) {
       userObject.authenticated = true;
-      return userObject
+      return userObject;
     } else {
-      return userObject
+      return userObject;
     }
   }
-  authenticateUser(userObject, 'neo')
-  return userObject
+  authenticateUser(userObject, 'neo');
+  return userObject;
 }
